@@ -1,0 +1,66 @@
+<html lang="en">
+  <body>
+    <div>
+      <div class="notification-index">
+        <div>
+          <div class="item-header" id="msg-header">
+            标题
+          </div>
+          <div class="item-content" id="msg-content">
+            内容
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        ipcRenderer.on('add-notification-item', (event, data) => {
+            console.log("receive message: " + JSON.stringify(data))
+            document.getElementById('msg-header').innerText = data.title
+            document.getElementById('msg-content').innerText = data.body
+        });
+    </script>
+  </body>
+</html>
+<style>
+  body {
+    overflow: hidden;
+  }
+ 
+  .notification-index {
+    display: flex;
+    flex-direction: column;
+    width: 338px;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .item-header {
+    display: flex;
+    align-items: center;
+  }
+ 
+  .header-img {
+    height: 16px;
+    width: 16px;
+  }
+ 
+  .header-title {
+    margin-left: 4px;
+    font-size: 12px;
+  }
+ 
+  .item-content {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #000;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
