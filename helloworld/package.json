@@ -1,0 +1,15 @@
+{
+  "name": "spiffy-rifle-sweat-heuyh",
+  "productName": "spiffy-rifle-sweat-heuyh",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "fangruibin",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.2.0"
+  }
+}
