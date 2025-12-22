@@ -1,0 +1,23 @@
+{
+  "name": "addon-demo",
+  "version": "1.0.0",
+  "description": "Interoperability between Node.js and C++",
+  "main": "main.js",
+  "scripts": {
+    "build:x86": "(cmake-js -d src -G \"Visual Studio 14 2015\" --arch=ia32 -A Win32 -O build_Win32)",
+    "build:x64": "(cmake-js -d src -G \"Visual Studio 14 2015\" --arch=x64 -A x64 -O build_x64)",
+    "build:cmake": "yarn build:x86 && yarn build:x64",
+    "build:all": "yarn build:code && yarn build:clean && yarn build:x86"
+  },
+  "dependencies": { 
+  },
+  "devDependencies": {
+    "node-addon-api": "5.0.0",
+    "cmake-js": "^6.3.2",
+    "fs-extra": "^10.1.0"
+  },
+  "cmake-js": { 
+    "runtime": "electron",
+    "runtimeVersion": "17.4.11"
+  }
+}
