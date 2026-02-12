@@ -1,0 +1,31 @@
+{
+  "name": "@dalongrong/node-addon-second",
+  "version": "1.0.0",
+  "main": "lib/binding.js",
+  "license": "MIT",
+  "types": "index.d.ts",
+  "devDependencies": {
+    "cmake-js": "^7.2.1"
+  },
+
+  "files": [
+    "lib/*",
+    "index.d.ts",
+    "build/Release/*.node"
+  ],
+
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^7.0.0"
+  },
+
+  "scripts": {
+    "build": "cmake-js compile",
+    "p": "npm publish"
+  },
+
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
