@@ -1,0 +1,7 @@
+安装electron-builder
+
+yarn add electron-builder --dev
+
+打包
+
+运行yarn build-product打包

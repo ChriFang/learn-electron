@@ -1,0 +1,49 @@
+{
+  "name": "my-electron-app",
+  "productName": "my-electron-app",
+  "description": "package demo",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "fangruibin",
+  "scripts": {
+    "start": "electron .",
+    "build": "webpack --config webpack.config.js",
+    "build-product": "electron-builder",
+    "start-with-react": "npm run build && electron ."
+  },
+  "build": {
+    "appId": "com.frb.electron-app",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": "build/icon.png"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "build/icon.icns"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "babel-preset-react": "^6.24.1",
+    "electron": "^39.2.6",
+    "electron-builder": "^26.8.1",
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.28.5",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
+}
